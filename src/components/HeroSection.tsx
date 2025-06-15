@@ -1,8 +1,15 @@
 
 import { ArrowRight } from "lucide-react";
+
 const HeroSection = () => (
   <section className="w-full py-12 md:py-20 flex flex-col items-center bg-gradient-to-b from-[#f6f9fc] via-[#ecf2f8] to-[#fff] border-b border-gray-200 font-sans">
     <div className="max-w-4xl w-full flex flex-col items-center px-4">
+      <img
+        src="/lovable-uploads/fda98c86-6eeb-4099-8656-ec8fa572bbdd.png"
+        alt="AbdulAzeez Ahmad Portrait"
+        className="w-32 h-32 md:w-40 md:h-40 rounded-full shadow-lg object-cover border-4 border-white mb-4"
+        style={{ objectPosition: "center top" }}
+      />
       <div className="mb-4">
         <span className="inline-block rounded-full bg-blue-50 text-blue-700 px-3 py-1 text-xs font-semibold mb-2 tracking-wide shadow">
           Quantity Surveyor
@@ -32,3 +39,4 @@ const HeroSection = () => (
   </section>
 );
 export default HeroSection;
+
