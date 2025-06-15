@@ -1,4 +1,3 @@
-
 import { Building, Calendar, MapPin } from "lucide-react";
 
 type Experience = {
@@ -27,14 +26,26 @@ const experienceList: Experience[] = [
   {
     role: "Senior Analyst (Quantity Surveyor)",
     company: "Murty International Limited",
-    period: "2022 – 2024",
-    location: "Abuja, Nigeria",
+    period: "Jan. 2024 – Sep. 2024",
+    location: "Plot 14, Suite 308, Midel Center, Off Oladipo Diya St, Gudu, Abuja",
     type: "Senior Position",
     accomplishments: [
-      "Prepared master BOQs and detailed cost estimates for 15+ projects; developed cost control dashboards with 35% reporting improvement.",
-      "Led bid submissions, evaluated tenders for high-value projects, and enhanced transparency in contract awards.",
-      "Drafted and managed extensive contract documents, implemented structured management frameworks improving delivery by 30%.",
-      "Integrated sustainability and value engineering, achieving up to 25% reduction in material waste."
+      "Contribute to project success through meticulous planning, preparation of detailed work plans, schedules, and optimized resource allocation, ensuring timely and efficient project delivery.",
+      "Led and prepared project proposals for bidding ranging from consulting and contracting projects which has resulted to the competition.",
+      "Prepare comprehensive contract documentation, correspondence, cost reports, valuations, variations, and claims, enhancing financial accuracy, and accountability.",
+      "Managed stakeholders effectively by maintaining strong communication channels, ensuring alignment with project goals, and preparing comprehensive contract management framework documents for project management and contract closures."
+    ]
+  },
+  {
+    role: "Analyst (Quantity Surveyor)",
+    company: "Murty International Limited",
+    period: "Sep. 2022 – Dec. 2023",
+    location: "Plot 14, Suite 308, Midel Center, Off Oladipo Diya St, Gudu, Abuja",
+    type: "Analyst Role",
+    accomplishments: [
+      "Developed master bills of quantities for building and commercial projects, implemented project management dashboards using Microsoft Excel for real-time cost monitoring and control, and prepared detailed cost reports, valuations, variations, claims, and progress reports.",
+      "Conducted thorough tender evaluations and reporting for over 8 engineering, project management, and consultancy services contracts exceeding ₦200 million, demonstrating expertise in tender analysis, contract management, and securing new business opportunities through effective proposal development and submission.",
+      "Prepared comprehensive contract documentation and correspondence, contributing to the company's revenue growth by securing new business opportunities. Also participated in EOI and proposal development."
     ]
   },
   {
