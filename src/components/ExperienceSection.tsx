@@ -1,10 +1,13 @@
 
+import { Building, Calendar, MapPin } from "lucide-react";
+
 type Experience = {
   role: string;
   company: string;
   period: string;
   location: string;
   accomplishments: string[];
+  type: string;
 };
 
 const experienceList: Experience[] = [
@@ -13,6 +16,7 @@ const experienceList: Experience[] = [
     company: "Origin Tech Group (Rhema Project BCEGI)",
     period: "2024 – Present",
     location: "Lagos, Nigeria",
+    type: "Current Role",
     accomplishments: [
       "Oversee cost management, budgeting, and material tracking, saving 30%+ through smart cost control strategies.",
       "Administer contracts, negotiate with vendors, and handle payments, valuations, and compliance reporting.",
@@ -25,6 +29,7 @@ const experienceList: Experience[] = [
     company: "Murty International Limited",
     period: "2022 – 2024",
     location: "Abuja, Nigeria",
+    type: "Senior Position",
     accomplishments: [
       "Prepared master BOQs and detailed cost estimates for 15+ projects; developed cost control dashboards with 35% reporting improvement.",
       "Led bid submissions, evaluated tenders for high-value projects, and enhanced transparency in contract awards.",
@@ -37,6 +42,7 @@ const experienceList: Experience[] = [
     company: "Zigurrate Projects and Services Ltd",
     period: "2022 – 2023",
     location: "Lagos, Nigeria (Remote)",
+    type: "Contract",
     accomplishments: [
       "Produced 20+ detailed project cost estimates (₦300m–1bn), optimizing budgeting and viability.",
       "Developed schedules for resources, improving efficiency.",
@@ -48,6 +54,7 @@ const experienceList: Experience[] = [
     company: "Lambert Electromec Limited",
     period: "2021 – 2022",
     location: "Abuja, Nigeria",
+    type: "Assistant Role",
     accomplishments: [
       "Prepared contract documentation, supervised site inspections and inventories.",
       "Identified cost-saving opportunities saving ₦25m for the company through optimized costs and reduced wastage."
@@ -58,40 +65,77 @@ const experienceList: Experience[] = [
     company: "Yusab Cost Consultant Limited",
     period: "2019",
     location: "Kwara, Nigeria",
+    type: "Internship",
     accomplishments: [
       "Applied modern measurement techniques for construction projects.",
       "Prepared BOQs and contract documents, and learned AutoCAD and MS Project for project tasks."
     ]
-  },
+  }
 ];
 
 const ExperienceSection = () => (
-  <section className="w-full py-12 bg-white font-sans border-b border-gray-100">
-    <div className="max-w-4xl mx-auto px-4">
-      <h2 className="text-2xl font-semibold mb-6 text-slate-900">Professional Experience</h2>
-      <ol className="relative border-l-4 border-blue-100 ml-2">
-        {experienceList.map((exp, i) => (
-          <li key={i} className="mb-10 ml-6 group">
-            <span className="absolute -left-3 flex h-6 w-6 items-center justify-center bg-blue-600 rounded-full ring-4 ring-white mt-1">
-              <span className="block h-3 w-3 rounded-full bg-white"></span>
-            </span>
-            <div className="">
-              <div className="flex flex-col md:flex-row md:items-center md:gap-4">
-                <h3 className="text-lg md:text-xl font-semibold text-blue-800">{exp.role}</h3>
-                <span className="text-sm text-blue-400">{exp.period}</span>
+  <section className="w-full py-20 bg-white">
+    <div className="max-w-6xl mx-auto px-6">
+      {/* Header */}
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          Professional Journey
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
+      </div>
+
+      {/* Timeline */}
+      <div className="relative">
+        {/* Vertical Line */}
+        <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-200 via-blue-400 to-blue-200"></div>
+        
+        <div className="space-y-12">
+          {experienceList.map((exp, index) => (
+            <div key={index} className="relative flex items-start gap-8 group">
+              {/* Timeline Dot */}
+              <div className="relative z-10 flex-shrink-0">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Building className="text-white" size={24} />
+                </div>
               </div>
-              <div className="text-md text-slate-800 font-medium">{exp.company}</div>
-              <div className="text-sm text-slate-500 mb-1">{exp.location}</div>
-              <ul className="list-disc ml-5 mb-2 mt-2 text-slate-700 space-y-1">
-                {exp.accomplishments.map((a, j) => (
-                  <li key={j}>{a}</li>
-                ))}
-              </ul>
+              
+              {/* Content Card */}
+              <div className="flex-1 bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 border border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-6">
+                  <div>
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">
+                        {exp.type}
+                      </span>
+                      <div className="flex items-center gap-2 text-slate-500 text-sm">
+                        <Calendar size={16} />
+                        <span>{exp.period}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">{exp.role}</h3>
+                    <h4 className="text-lg text-blue-600 font-semibold mb-2">{exp.company}</h4>
+                    <div className="flex items-center gap-2 text-slate-500">
+                      <MapPin size={16} />
+                      <span>{exp.location}</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-3">
+                  {exp.accomplishments.map((accomplishment, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-slate-700 leading-relaxed">{accomplishment}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-          </li>
-        ))}
-      </ol>
+          ))}
+        </div>
+      </div>
     </div>
   </section>
-)
+);
+
 export default ExperienceSection;

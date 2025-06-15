@@ -9,7 +9,7 @@ import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
-    <main className="min-h-screen w-full bg-gradient-to-b from-gray-50 to-white font-sans">
+    <main className="min-h-screen w-full bg-white font-sans overflow-x-hidden">
       <HeroSection />
       <SummarySection />
       <SkillsSection />
@@ -17,8 +17,11 @@ const Index = () => {
       <ProjectsSection />
       <CertificationsSection />
       <ContactSection />
-      <footer className="w-full py-4 text-center text-xs text-slate-400 bg-transparent mt-0">
-        © {new Date().getFullYear()} AbdulAzeez Ahmad · Portfolio
+      <footer className="w-full py-6 text-center text-sm text-slate-500 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-6xl mx-auto px-6">
+          <p>© {new Date().getFullYear()} AbdulAzeez Ahmad · Professional Quantity Surveyor</p>
+          <p className="mt-1 text-xs">Delivering Excellence in Cost Management & Project Planning</p>
+        </div>
       </footer>
     </main>
   );
